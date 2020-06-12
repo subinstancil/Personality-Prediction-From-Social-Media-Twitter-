@@ -1,5 +1,5 @@
 from flask import *
-
+import time
 
 
 #define as may functions as you want
@@ -21,8 +21,10 @@ def home():
 	return render_template("home.html", **locals())  
 
 @app.route('/prediction',methods=['GET','POST'])  
-def predict():  
-	return render_template("prediction.html")
+def predict(): 
+	time.sleep(3) 
+	val="Prediction"
+	return render_template("prediction.html", **locals())
 
 
 # @app.route('/location')  

@@ -22,9 +22,13 @@ def home():
 
 @app.route('/prediction',methods=['GET','POST'])  
 def predict(): 
-	time.sleep(3) 
 	val="Prediction"
 	return render_template("prediction.html", **locals())
+
+@app.route('/txtpredict')  
+def tpredict():
+	val="Text Predictor" 
+	return render_template("tpredict.html", **locals())
 
 
 # @app.route('/location')  

@@ -18,6 +18,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfVectorizer
 from collections import Counter
 import tweepy_config
+import tweepy
 
 api = tweepy_config.api
 

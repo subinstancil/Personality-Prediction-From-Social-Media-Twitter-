@@ -1,5 +1,6 @@
 from flask import *
 import time
+import big5
 
 
 #define as may functions as you want
@@ -30,6 +31,10 @@ def tpredict():
 	val="Text Predictor" 
 	return render_template("tpredict.html", **locals())
 
+@app.route('/main')  
+def main():
+	val="Home" 
+	return render_template("main.html", **locals()) 
 
 # @app.route('/location')  
 # def location():  

@@ -1,6 +1,9 @@
 from flask import *
+import sys
+import os
 import time
 import big5
+import mbti
 
 
 #define as may functions as you want
@@ -19,12 +22,30 @@ app = Flask(__name__)
 @app.route('/')  
 def home():
 	val="Home" 
+	os.remove('./static/assets/images/fig1.png')
 	return render_template("home.html", **locals())  
 
 @app.route('/prediction',methods=['GET','POST'])  
-def predict(): 
-	val="Prediction"
-	return render_template("prediction.html", **locals())
+def predict():
+	if request.method == 'POST':
+		username = request.form['uname']
+		mbti.mbti_predict(username)
+		val="prediction"
+		traits,length=big5.big5_predict()
+		ext=traits[0]
+		neu=traits[1]
+		agr=traits[2]
+		con=traits[3]
+		opn=traits[4]
+		pext=int((traits[0]/800)*100)
+		pneu=int((traits[1]/800)*100)
+		pagr=int((traits[2]/800)*100)
+		pcon=int((traits[3]/800)*100)
+		popn=int((traits[4]/800)*100)
+		os.remove('user.csv')
+		# print(ext,pext)
+		return render_template("prediction.html", **locals())
+	return render_template("home.html", **locals())
 
 @app.route('/txtpredict')  
 def tpredict():

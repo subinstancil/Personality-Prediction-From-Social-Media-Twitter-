@@ -27,6 +27,11 @@ auth=tweepy.OAuthHandler(ckey, csecret)
 auth.set_access_token(atoken, asecret)
 api=tweepy.API(auth)
 
+
+
+profile_image = ""
+
+
 emoticons_str = r"""
     (?:
         [:=;] # Eyes
@@ -108,10 +113,10 @@ def getTweets(user):
 	csvFile = open('user.csv', 'a', newline='')
 	csvWriter = csv.writer(csvFile)
 	try:
-		tweets1=api.user_timeline(screen_name = user, count = 1)
+		# tweets1=api.user_timeline(screen_name = user, count = 1)
 
-		for x in tweets1:
-			print(x.user.profile_image_url)
+		# for x in tweets1:
+		# 	profile_image=x.user.profile_image_url
 
 		for i in range(0,4):
 			tweets=api.user_timeline(screen_name = user, count = 1000, include_rts=True, page=i)
@@ -187,5 +192,6 @@ def mbti_predict(username):
         answer.append("J")
     mbti="".join(answer)
     print(mbti)
+    return mbti
 
 # mbti_predict("@realDonaldTrump")

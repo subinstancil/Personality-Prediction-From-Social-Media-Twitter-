@@ -4,13 +4,34 @@ import os
 import time
 import big5
 import mbti
+import tweepy
+
+
+
+ckey='Hud29LI3lWB4Xv94VJ9zBzb8N'
+csecret='5nk2iu5lff96BCU6dGayGaMcZWwCQDZ0agsyYGNW8TCIPf9rvm'
+atoken='1142590141-khS8xY5ekC12xOkl29QsIBwdv89dgxgOkaURGEI'
+asecret='JM0sjDJzI8bF6ZvGMfUO2wsq11mdiOcZ3xc1QoCNJjfhn'
+auth=tweepy.OAuthHandler(ckey, csecret)
+auth.set_access_token(atoken, asecret)
+api=tweepy.API(auth)
+
+
 
 
 #define as may functions as you want
 
-def test_function():
-    val="test"
-    return val
+def test_function(user1):
+	user = api.get_user(user1)
+	# print(user.name)
+	# print(user.description)
+	# print(user.followers_count)
+	# print(user.statuses_count)
+	# print(user.profile_image_url)
+	# expanded_url = user.entities['url']['urls'][0]['expanded_url']
+	# display_url = user.entities['url']['urls'][0]['display_url']
+	# print(user)
+	return user.profile_image_url,user.name,user.description
 
 
 
@@ -22,16 +43,19 @@ app = Flask(__name__)
 @app.route('/')  
 def home():
 	val="Home" 
-	os.remove('./static/assets/images/fig1.png')
+	# os.remove('./static/assets/images/fig1.png')
 	return render_template("home.html", **locals())  
 
 @app.route('/prediction',methods=['GET','POST'])  
 def predict():
 	if request.method == 'POST':
 		username = request.form['uname']
-		mbti.mbti_predict(username)
-		val="prediction"
-		traits,length=big5.big5_predict()
+		mbti_score = mbti.mbti_predict(username)
+		profile_image, name, des = test_function(username)
+		print(profile_image)
+		print(mbti_score)
+		val= mbti_score
+		traits, length = big5.big5_predict()
 		ext=traits[0]
 		neu=traits[1]
 		agr=traits[2]

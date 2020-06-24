@@ -3,7 +3,6 @@ from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from nltk.stem import *
 from nltk.stem.snowball import SnowballStemmer
-import tweepy
 import sys
 import os
 import nltk 
@@ -18,14 +17,10 @@ import pickle
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfVectorizer
 from collections import Counter
+import tweepy_config
 
-ckey='Hud29LI3lWB4Xv94VJ9zBzb8N'
-csecret='5nk2iu5lff96BCU6dGayGaMcZWwCQDZ0agsyYGNW8TCIPf9rvm'
-atoken='1142590141-khS8xY5ekC12xOkl29QsIBwdv89dgxgOkaURGEI'
-asecret='JM0sjDJzI8bF6ZvGMfUO2wsq11mdiOcZ3xc1QoCNJjfhn'
-auth=tweepy.OAuthHandler(ckey, csecret)
-auth.set_access_token(atoken, asecret)
-api=tweepy.API(auth)
+api = tweepy_config.api
+
 
 
 

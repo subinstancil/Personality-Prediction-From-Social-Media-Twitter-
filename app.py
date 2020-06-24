@@ -4,18 +4,9 @@ import os
 import time
 import big5
 import mbti
-import tweepy
+import tweepy_config
 
-
-
-ckey='Hud29LI3lWB4Xv94VJ9zBzb8N'
-csecret='5nk2iu5lff96BCU6dGayGaMcZWwCQDZ0agsyYGNW8TCIPf9rvm'
-atoken='1142590141-khS8xY5ekC12xOkl29QsIBwdv89dgxgOkaURGEI'
-asecret='JM0sjDJzI8bF6ZvGMfUO2wsq11mdiOcZ3xc1QoCNJjfhn'
-auth=tweepy.OAuthHandler(ckey, csecret)
-auth.set_access_token(atoken, asecret)
-api=tweepy.API(auth)
-
+api = tweepy_config.api
 
 
 

@@ -109,8 +109,8 @@
                     <ul id="sidebarnav">
 
                         <li> <a class="waves-effect waves-dark" href="{{ url_for('home') }}" aria-expanded="false"><i class="mdi mdi-library"></i><span class="hide-menu">Home</span></a></li>
-                        <li> <a class="waves-effect waves-dark" href="{{ url_for('tpredict') }}" aria-expanded="false"><i class="mdi mdi-clipboard-text"></i><span class="hide-menu">Predict Text</span></a></li>
                         <li> <a class="waves-effect waves-dark active" href="#" aria-expanded="false"><i class="mdi mdi-chart-pie"></i><span class="hide-menu">Prediction</span></a></li>
+                        <li> <a class="waves-effect waves-dark" href="{{ url_for('tpredict') }}" aria-expanded="false"><i class="mdi mdi-clipboard-text"></i><span class="hide-menu">Help</span></a></li>
                        
                        
                     </ul>
@@ -185,7 +185,7 @@
                                
 
                                 <div class="row">
-                                    <div class="col-lg-6 col-md-12">
+                                    <div class="col-lg-5 col-md-12">
                                         <div class="card">
                                             <div class="card-body">
                                                 <div class="d-flex">
@@ -199,18 +199,287 @@
                                                                 <td style="width:50px;"><span class="round"><img src="{{profile_image}}" alt="user" width="50"></span></td>
                                                                 <td>
                                                                     <h6>{{name}}</h6><small class="text-muted">{{username}}</small></td>
-                                                                <td> {{des}}</td>
+                                                                <td> <div class="col-4"><a href="https://twitter.com/{{username}}" class="link"><i class="mdi mdi-twitter"></i> <font class="font-medium">{{count}}</font></a></div>
+                                                                </td>
                                                                 <!-- <td>Low</td> -->
                                                             </tr>
                                                         </tbody>
                                                     </table>
                                                 </div>
+                                                <div class="d-flex">
+                                                    <div>
+                                                        <h4 class="card-title"><span class="lstick"></span>Personality characteristics</h4></div>
+                                                </div>
+
+                                                <div class="cts">
+                                                    <b>cts only</b>
+                                                </div>
+                                                <div class="cts ENTJ">
+                                                    <h5 class="font-normal">ENTJ</h5>
+                                                    <p>A Commander (ENTJ) is someone with the Extraverted, Intuitive, Thinking, and Judging personality traits. They are decisive people who love momentum and accomplishment. They gather information to construct their creative visions but rarely hesitate for long before acting on them.</p>
+                                                    <p>characteristics : </p>
+                                                    <p>Strategic, logical,
+                                                        efficient, outgoing,
+                                                        ambitious, independent.
+                                                        
+                                                        Effective organizers of
+                                                        people and long-range
+                                                        planners.
+                                                        
+                                                    </p>
+                                                    <img class="card-img-top img-responsive" src="{{url_for('static', filename='assets/images/ptypes1/'+val+'.jpg')}}" alt="Card image cap">
+                                                </div>
+                                                <div class="cts ISTJ">
+                                                    <h5 class="font-normal">ISTJ</h5>
+                                                    <p>A Logistician (ISTJ) is someone with the Introverted, Observant, Thinking, and Judging personality traits. These people tend to be reserved yet willful, with a rational outlook on life. They compose their actions carefully and carry them out with methodical purpose.</p>
+                                                    <p>characteristics : </p>
+                                                    <p>Responsible, sincere,
+                                                        analytical, reserved,
+                                                        realistic, systematic.
+                                                        
+                                                        Hardworking and
+                                                        trustworthy with sound
+                                                        practical judgment.                                                        
+                                                        
+                                                    </p>
+                                                    <img class="card-img-top img-responsive" src="{{url_for('static', filename='assets/images/ptypes1/'+val+'.jpg')}}" alt="Card image cap">
+                                                
+                                                </div>
+                                                <div class="cts ISFJ">
+                                                    <h5 class="font-normal">ISFJ</h5>
+                                                    <p>A Defender (ISFJ) is someone with the Introverted, Observant, Feeling, and Judging personality traits. These people tend to be warm and unassuming in their own steady way. They’re efficient and responsible, giving careful attention to practical details in their daily lives.</p>
+                                                    <p>characteristics : </p>
+                                                    <p>Warm, considerate,
+                                                        gentle, responsible,
+                                                        pragmatic, thorough.
+                                                        
+                                                        Devoted caretakers who
+                                                        enjoy being helpful to
+                                                        others.
+        
+                                                    </p>
+                                                    <img class="card-img-top img-responsive" src="{{url_for('static', filename='assets/images/ptypes1/'+val+'.jpg')}}" alt="Card image cap">
+                                                
+                                                </div>
+                                                <div class="cts INFJ">
+                                                    <h5 class="font-normal">INFJ</h5>
+                                                    <p>An Advocate (INFJ) is someone with the Introverted, Intuitive, Feeling, and Judging personality traits. They tend to approach life with deep thoughtfulness and imagination. Their inner vision, personal values, and a quiet, principled version of humanism guide them in all things.</p>
+                                                    <p>characteristics : </p>
+                                                    <p>Idealistic, organized,
+                                                        insightful, dependable,
+                                                        compassionate, gentle.
+                                                        
+                                                        Seek harmony and
+                                                        cooperation, enjoy
+                                                        intellectual stimulation.
+                                                        
+                                                    </p>
+                                                    <img class="card-img-top img-responsive" src="{{url_for('static', filename='assets/images/ptypes1/'+val+'.jpg')}}" alt="Card image cap">
+                                                
+                                                </div>
+                                                <div class="cts INTJ">
+                                                    <h5 class="font-normal">INTJ</h5>
+                                                    <p>An Architect (INTJ) is a person with the Introverted, Intuitive, Thinking, and Judging personality traits. These thoughtful tacticians love perfecting the details of life, applying creativity and rationality to everything they do. Their inner world is often a private, complex one.</p>
+                                                    <p>characteristics : </p>
+                                                    <p>Innovative, independent,
+                                                        strategic, logical,
+                                                        reserved, insightful.
+                                                        
+                                                        Driven by their own
+                                                        original ideas to achieve
+                                                        improvements.
+                                                    </p>
+                                                    <img class="card-img-top img-responsive" src="{{url_for('static', filename='assets/images/ptypes1/'+val+'.jpg')}}" alt="Card image cap">
+                                                
+                                                </div>
+                                                <div class="cts ISTP">
+                                                    <h5 class="font-normal">ISTP</h5>
+                                                    <p>A Virtuoso (ISTP) is someone with the Introverted, Observant, Thinking, and Prospecting personality traits. They tend to have an individualistic mindset, pursuing goals without needing much external connection. They engage in life with inquisitiveness and personal skill, varying their approach as needed.</p>
+                                                    <p>characteristics : </p>
+                                                    <p>Action-oriented, logical,
+                                                        analytical, spontaneous,
+                                                        reserved, independent.
+                                                        
+                                                        Enjoy adventure, skilled
+                                                        at understanding how
+                                                        mechanical things work.
+                                                    </p>
+                                                    <img class="card-img-top img-responsive" src="{{url_for('static', filename='assets/images/ptypes1/'+val+'.jpg')}}" alt="Card image cap">
+                                                
+                                                </div>
+                                                <div class="cts ISFP">
+                                                    <h5 class="font-normal">ISFP</h5>
+                                                    <p>An Adventurer (ISFP) is a person with the Introverted, Observant, Feeling, and Prospecting personality traits. They tend to have open minds, approaching life, new experiences, and people with grounded warmth. Their ability to stay in the moment helps them uncover exciting potentials.</p>
+                                                    <p>characteristics : </p>
+                                                    <p>Gentle, sensitive,
+                                                        nurturing, helpful,
+                                                        flexible, realistic. Seek to
+                                                        
+                                                        create a personal
+                                                        environment that is both
+                                                        beautiful and practical.
+                                                    </p>
+                                                    <img class="card-img-top img-responsive" src="{{url_for('static', filename='assets/images/ptypes1/'+val+'.jpg')}}" alt="Card image cap">
+                                                
+                                                </div>
+                                                <div class="cts INFP">
+                                                    <h5 class="font-normal">INFP</h5>
+                                                    <p>A Mediator (INFP) is someone who possesses the Introverted, Intuitive, Feeling, and Prospecting personality traits. Making up only 4% of the population, these rare personality types tend to be quiet, open-minded, imaginative, and apply a caring and creative approach to everything they do.</p>
+                                                    <p>characteristics : </p>
+                                                    <p>Sensitive, creative,
+                                                        idealistic, perceptive,
+                                                        caring, loyal. Value inner
+                                                        
+                                                        harmony and personal
+                                                        growth, focus on dreams
+                                                        and possibilities.
+                                                    </p>
+                                                    <img class="card-img-top img-responsive" src="{{url_for('static', filename='assets/images/ptypes1/'+val+'.jpg')}}" alt="Card image cap">
+                                                
+                                                </div>
+                                                <div class="cts INTP">
+                                                    <h5 class="font-normal">INTP</h5>
+                                                    <p>A Logician (INTP) is someone with the Introverted, Intuitive, Thinking, and Prospecting personality traits. These flexible thinkers enjoy taking an unconventional approach to many aspects of life. They often seek out unlikely paths, mixing willingness to experiment with personal creativity.</p>
+                                                    <p>characteristics : </p>
+                                                    <p>Intellectual, logical,
+                                                        precise, reserved,
+                                                        flexible, imaginative.
+                                                        
+                                                        Original thinkers who
+                                                        enjoy speculation and
+                                                        creative problem solving.
+                                                    </p>
+                                                    <img class="card-img-top img-responsive" src="{{url_for('static', filename='assets/images/ptypes1/'+val+'.jpg')}}" alt="Card image cap">
+                                                
+                                                </div>
+                                                <div class="cts ESTP">
+                                                    <h5 class="font-normal">ESTP</h5>
+                                                    <p>An Entrepreneur (ESTP) is someone with the Extraverted, Observant, Thinking, and Prospecting personality traits. They tend to be energetic and action-oriented, deftly navigating whatever is in front of them. They love uncovering life’s opportunities, whether socializing with others or in more personal pursuits.</p>
+                                                    <p>characteristics : </p>
+                                                    <p>Outgoing, realistic,
+                                                        action-oriented, curious,
+                                                        versatile, spontaneous.
+                                                        
+                                                        Pragmatic problem
+                                                        solvers and skillful
+                                                        negotiators.
+                                                    </p>
+                                                    <img class="card-img-top img-responsive" src="{{url_for('static', filename='assets/images/ptypes1/'+val+'.jpg')}}" alt="Card image cap">
+                                                
+                                                </div>
+                                                <div class="cts ESFP">
+                                                    <h5 class="font-normal">ESFP</h5>
+                                                    <p>An Entertainer (ESFP) is a person with the Extraverted, Observant, Feeling, and Prospecting personality traits. These people love vibrant experiences, engaging in life eagerly and taking pleasure in discovering the unknown. They can be very social, often encouraging others into shared activities.</p>
+                                                    <p>characteristics : </p>
+                                                    <p>Playful, enthusiastic,
+                                                        friendly, spontaneous,
+                                                        tactful, flexible. Have
+                                                        
+                                                        strong common sense,
+                                                        enjoy helping people in
+                                                        tangible ways.                                                        
+                                                    </p>
+                                                    <img class="card-img-top img-responsive" src="{{url_for('static', filename='assets/images/ptypes1/'+val+'.jpg')}}" alt="Card image cap">
+                                                
+                                                </div>
+                                                <div class="cts ENFP">
+                                                    <h5 class="font-normal">ENFP</h5>
+                                                    <p>A Campaigner (ENFP) is someone with the Extraverted, Intuitive, Feeling, and Prospecting personality traits. These people tend to embrace big ideas and actions that reflect their sense of hope and goodwill toward others. Their vibrant energy can flow in many directions.</p>
+                                                    <p>characteristics : </p>
+                                                    <p>Enthusiastic, creative,
+                                                        spontaneous, optimistic,
+                                                        supportive, playful. Value
+                                                        
+                                                        inspiration, enjoy
+                                                        starting new projects,
+                                                        see potential in others.                                                        
+                                                    </p>
+                                                    <img class="card-img-top img-responsive" src="{{url_for('static', filename='assets/images/ptypes1/'+val+'.jpg')}}" alt="Card image cap">
+                                                
+                                                </div>
+                                                <div class="cts ENTP">
+                                                    <h5 class="font-normal">ENTP</h5>
+                                                    <p>A Debater (ENTP) is a person with the Extraverted, Intuitive, Thinking, and Prospecting personality traits. They tend to be bold and creative, deconstructing and rebuilding ideas with great mental agility. They pursue their goals vigorously despite any resistance they might encounter.</p>
+                                                    <p>characteristics : </p>
+                                                    <p>Inventive, enthusiastic,
+                                                        strategic, enterprising,
+                                                        inquisitive, versatile.
+                                                        
+                                                        Enjoy new ideas and
+                                                        challenges, value
+                                                        inspiration.                                                       
+                                                    </p>
+                                                    <img class="card-img-top img-responsive" src="{{url_for('static', filename='assets/images/ptypes1/'+val+'.jpg')}}" alt="Card image cap">
+                                                
+                                                </div>
+                                                <div class="cts ESTJ">
+                                                    <h5 class="font-normal">ESTJ</h5>
+                                                    <p>An Executive (ESTJ) is someone with the Extraverted, Observant, Thinking, and Judging personality traits. They possess great fortitude, emphatically following their own sensible judgment. They often serve as a stabilizing force among others, able to offer solid direction amid adversity.</p>
+                                                    <p>characteristics : </p>
+                                                    <p>Efficient, outgoing,
+                                                        analytical, systematic,
+                                                        dependable, realistic.
+                                                        
+                                                        Like to run the show and
+                                                        get things done in an
+                                                        orderly fashion.                                                       
+                                                    </p>
+                                                    <img class="card-img-top img-responsive" src="{{url_for('static', filename='assets/images/ptypes1/'+val+'.jpg')}}" alt="Card image cap">
+                                                
+                                                </div>
+                                                <div class="cts ESFJ">
+                                                    <h5 class="font-normal">ESFJ</h5>
+                                                    <p>A Consul (ESFJ) is a person with the Extraverted, Observant, Feeling, and Judging personality traits. They are attentive and people-focused, and they enjoy taking part in their social community. Their achievements are guided by decisive values, and they willingly offer guidance to others.</p>
+                                                    <p>characteristics : </p>
+                                                    <p>Friendly, outgoing,
+                                                        reliable, conscientious,
+                                                        organized, practical. Seek
+                                                        
+                                                        to be helpful and please
+                                                        others, enjoy being
+                                                        active and productive.                                                       
+                                                    </p>
+                                                    <img class="card-img-top img-responsive" src="{{url_for('static', filename='assets/images/ptypes1/'+val+'.jpg')}}" alt="Card image cap">
+                                                
+                                                </div>
+                                                <div class="cts ENFJ">
+                                                    <h5 class="font-normal">ENFJ</h5>
+                                                    <p>A Protagonist (ENFJ) is a person with the Extraverted, Intuitive, Feeling, and Judging personality traits. These warm, forthright types love helping others, and they tend to have strong ideas and values. They back their perspective with the creative energy to achieve their goals.</p>
+                                                    <p>characteristics : </p>
+                                                    <p>Caring, enthusiastic,
+                                                        idealistic, organized,
+                                                        diplomatic, responsible.
+                                                        
+                                                        Skilled communicators
+                                                        who value connection
+                                                        with people.                                                       
+                                                    </p>
+                                                    <img class="card-img-top img-responsive" src="{{url_for('static', filename='assets/images/ptypes1/'+val+'.jpg')}}" alt="Card image cap">
+                                                
+                                                </div>
                                             </div>
-                                            <img class="card-img-top img-responsive" src="{{url_for('static', filename='assets/images/fig1.png')}}" alt="Card image cap">
+                                           
+                                        
+                                           
+
                                         </div>
                                     </div>
+
+                                    <div class="col-lg-7 col-md-12">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <div class="d-flex">
+                                                    <h4 class="card-title"><span class="lstick"></span>Personality Type</h4>
+                                                </div>
+                                                <img class="card-img-top img-responsive" src="{{url_for('static', filename='assets/images/ptypes/'+val+'.jpg')}}" alt="Card image cap">
+                                        
+                                            </div>
+                                        </div>
+                                    </div>
+
+
                                     <!-- contact -->
-                                    <div class="col-lg-6 col-md-12">
+                                    <!-- <div class="col-lg-8 col-md-12">
                                         <div class="card">
                                             <div class="card-body">
                                                 <div class="d-flex">
@@ -256,59 +525,9 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
 
-
-
-
-
-
-
-
-                                <div class="row">
-                                    <div class="col-lg-9 col-md-12">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <div class="d-flex">
-                                                    <div>
-                                                        <h3 class="card-title m-b-5"><span class="lstick"></span>Sales Overview </h3>
-                                                    </div>
-                                                    <div class="ml-auto">
-                                                        <select class="custom-select b-0">
-                                                            <option selected="">January 2017</option>
-                                                            <option value="1">February 2017</option>
-                                                            <option value="2">March 2017</option>
-                                                            <option value="3">April 2017</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div id="sales-overview2" class="p-relative" style="height:360px;"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- ============================================================== -->
-                                    <!-- visit charts-->
-                                    <!-- ============================================================== -->
-                                    <div class="col-lg-3 col-md-12">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <h4 class="card-title"><span class="lstick"></span>Visit Separation</h4>
-                                                <div id="visitor" style="height:250px; width:100%;"></div>
-                                                <table class="table vm font-14">
-                                                    <tr>
-                                                        <td class="b-0">Mobile</td>
-                                                        <td class="text-right font-medium b-0">38.5%</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Tablet</td>
-                                                        <td class="text-right font-medium">30.8%</td>
-                                                    </tr>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
 
 
                             
@@ -351,6 +570,13 @@
     <script src="{{url_for('static', filename='js/sidebarmenu.js')}}"></script>
     <!--Custom JavaScript -->
     <script src="{{url_for('static', filename='js/custom.min.js')}}"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('.cts').hide();
+            $('.{{val}}').show();
+        });
+    </script>
 
 </body>
 </html>

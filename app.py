@@ -22,7 +22,7 @@ def test_function(user1):
 		print("Failed to run the command on that user, Skipping...")
 		flag = 1
 		return 1,1,1
-	return user.profile_image_url,user.name,user.description
+	return user.profile_image_url,user.name,user.description,user.statuses_count
 
 
 
@@ -41,23 +41,23 @@ def home():
 def predict():
 	if request.method == 'POST':
 		username = request.form['uname']
-		profile_image, name, des = test_function(username)
+		profile_image, name, des, count = test_function(username)
 		if(flag == 0): 
 			mbti_score = mbti.mbti_predict(username)
 			print(profile_image)
 			print(mbti_score)
 			val= mbti_score
-			traits, length = big5.big5_predict()
-			ext=traits[0]
-			neu=traits[1]
-			agr=traits[2]
-			con=traits[3]
-			opn=traits[4]
-			pext=int((traits[0]/800)*100)
-			pneu=int((traits[1]/800)*100)
-			pagr=int((traits[2]/800)*100)
-			pcon=int((traits[3]/800)*100)
-			popn=int((traits[4]/800)*100)
+			# traits, length = big5.big5_predict()
+			# ext=traits[0]
+			# neu=traits[1]
+			# agr=traits[2]
+			# con=traits[3]
+			# opn=traits[4]
+			# pext=int((traits[0]/length)*100)
+			# pneu=int((traits[1]/length)*100)
+			# pagr=int((traits[2]/length)*100)
+			# pcon=int((traits[3]/length)*100)
+			# popn=int((traits[4]/length)*100)
 			os.remove('user.csv')
 			# print(ext,pext)
 			return render_template("prediction.html", **locals())
@@ -65,7 +65,7 @@ def predict():
 
 @app.route('/txtpredict')  
 def tpredict():
-	val="Text Predictor" 
+	val="Help" 
 	return render_template("tpredict.html", **locals())
 
 @app.route('/main')  

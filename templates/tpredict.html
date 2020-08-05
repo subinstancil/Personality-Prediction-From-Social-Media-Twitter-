@@ -110,10 +110,10 @@
 
                         <li> <a class="waves-effect waves-dark" href="{{ url_for('home') }}" aria-expanded="false"><i class="mdi mdi-library"></i><span class="hide-menu">Home</span></a></li>
                         
-                        <li> <a class="waves-effect waves-dark" href="{{ url_for('tpredict') }}" aria-expanded="false"><i class="mdi mdi-clipboard-text"></i><span class="hide-menu">Predict Text</span></a></li>
 
                         <li> <a class="waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-chart-pie"></i><span class="hide-menu">Prediction</span></a></li> 
-                       
+                        <li> <a class="waves-effect waves-dark" href="{{ url_for('tpredict') }}" aria-expanded="false"><i class="mdi mdi-clipboard-text"></i><span class="hide-menu">Help</span></a></li>
+   
                     </ul>
                    <!--  <div class="text-center m-t-30">
                         <a href="https://wrappixel.com/templates/adminpro/" class="btn waves-effect waves-light btn-info hidden-md-down"> Upgrade to Pro</a>
@@ -188,22 +188,9 @@
                             <div class="card-body" style="padding: 6.25rem;">
                                
 
-                                <form action="{{url_for('predict')}}" method='POST' class="form-horizontal form-material">
-                                    <div class="form-group">
-                                        <label class="col-md-3" style="float: left;">Enter Text</label>
-                                        <div class="col-md-9" style="float: left;">
-                                            <input type="text" placeholder="some text..." class="form-control form-control-line">
-                                        </div>
-                                    </div>
-                                    <br>
-                                    <div class="form-group">
-                                        <div class="col-sm-12">
-                                            <center><button class="btn btn-success">Predict</button></center>
-                                        </div>
-                                    </div>
-                                    <!-- <input type="text" name="username">
-                                    <input type="submit" name="Button" class="btn btn-danger"> -->
-                                </form>
+                                <img class="card-img-top img-responsive" src="{{url_for('static', filename='assets/images/main2.png')}}" alt="Card image cap">
+                                <img class="card-img-top img-responsive" src="{{url_for('static', filename='assets/images/main1.png')}}" alt="Card image cap">
+                                <img class="card-img-top img-responsive" src="{{url_for('static', filename='assets/images/main3.png')}}" alt="Card image cap">
 
                             </div>
                         </div>

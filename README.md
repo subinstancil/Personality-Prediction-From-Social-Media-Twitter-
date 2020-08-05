@@ -13,7 +13,7 @@ A Natural Language Processing (NLP), Machine Learning and Data Mining project, w
 ## Types of Personalities :
 
 In Myer's Briggs Type indicator Classification we have 16 types of personality which can be categorized as :<br />
-![](Images/Types.png)
+![](Types.png)
 
 ## How to RUN (WEB APP) :
 
